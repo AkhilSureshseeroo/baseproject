@@ -48,7 +48,7 @@ set userId(id: string) {
   }
   deletepage(_id:any,session:any):Observable<Pages>{
     return this.communicationService.delete<Pages>(
-      PagemanagementAPI.deletePage(_id),session
+      PagemanagementAPI.deletePage(_id),'',session
     )
   }
   getpageDetails(_id: any,session:any): Observable<Pages> {

@@ -20,6 +20,14 @@ const routes: Routes = [
             (m) => m.PagemanagementModule
           ),
       },
+      {
+        path: "servicemanagement",
+        loadChildren: () =>
+          import("./servicemanagement/servicemanagement.module").then(
+            (m) => m.ServicemanagementModule
+          ),
+      },
+
 
 
 

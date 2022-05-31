@@ -39,7 +39,13 @@ li {list-style: none;}
 .mat-error {font-size: 13px;text-align: center;width: 100%;display: inline-block;}
 /*********=======DASHBOARD=======************/
 /***=left menu=***/
-.leftmenu_section{ background: $primarycolor; width:150px; padding:15px 0px 15px 10px;}
+
+.leftmenu_section {
+  background: #000271;
+  width: 150px;
+  padding: 15px 0 15px 10px;
+}
+
 .highmediumlow{margin-top: 20px;}
 .menu_boxes a{ background: #0b0e85; padding:20px 10px 12px 10px; display: inline-block; width: 100%; border-radius: 6px; margin-bottom:15px; color:#fff; font-family: "poppinsmedium" !important;}
 .menu_boxes{position:relative;}
@@ -53,7 +59,17 @@ li {list-style: none;}
 .navigation_menus ul li a { color:#fff; padding:9px 0; display: inline-block;
 &:hover{color:#7578fc; padding: 9px 0px 9px 5px }}
 /***=header=***/
-.header_section{background:rgb(223, 225, 228);border-bottom: solid 1px #cfcfcf;position: fixed;width: 100%;left:0; right:0;padding-left: 165px;padding-right: 15px;z-index:9999; }
+.header_section {
+  background: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding-left: 165px;
+  padding-right: 15px;
+  z-index: 9999;
+}
 .card-header{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align: stretch;-ms-flex-align: stretch;align-items: stretch;-ms-flex-wrap: wrap;flex-wrap: wrap;min-height: 65px;padding: 0;background-color: transparent; position: relative;}
 .card-toolbar{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;margin: 0.5rem 0;-ms-flex-wrap: wrap;flex-wrap: wrap;}
 .card-toolbar-leftarea{display: flex;align-items: center !important;}
