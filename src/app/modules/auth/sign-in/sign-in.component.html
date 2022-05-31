@@ -1,0 +1,71 @@
+
+<div class="login_section">
+
+  <div class="container h-100">
+    <div class="row justify-content-center d-flex  h-100">
+      <div class="col-lg-5 login_area">
+        <form class="login_area" [formGroup]="signInForm" #signInNgForm="ngForm">
+          <span class="w-100 text-center d-inline-block loginlogo">
+
+        </span>
+          <h6 class="text-white w-100 text-center f_light f_19 mb-4">Sign In to Know More</h6>
+
+      <div class="login_fields whitebox ">
+        <h4 class="w-100 text-center f_17 mb-4 f_semi">User SignIn</h4>
+
+          <div
+            class="alert"
+            [ngClass]="alert.type"
+            role="alert"
+            *ngIf="showAlert"
+          >
+            {{ alert.message }}
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="text"
+              class="form-control text-center"
+              formControlName="email"
+              placeholder="Email"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && signInForm.get('email')!.hasError('required')
+              "
+            >
+              User name is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="password"
+              class="form-control text-center"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && signInForm.get('password')!.hasError('required')
+              "
+            >
+              Password is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 mt-2 pl-0 pr-0">
+            <button (click)="signIn()" class="bluebutton w-100 btn btnlg h-auto">Signin</button>
+          </div>
+
+          <!-- <div class="col-lg-12 pb-2 pl-0 pr-0 text-center mt-4">
+          <a href="" class="textlink f_13">Forgot password</a>
+          </div>   -->
+
+      </div>
+
+
+        </form>
+        <li><a [routerLink]="['/sign-up']">New Here?</a></li>
+      </div>
+    </div>
+  </div>
+
+    </div>

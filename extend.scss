@@ -1,0 +1,22 @@
+@import 'variables.scss';
+@import url("./assets/fonts/stylesheet.css");
+/****=====Extend Styles=====***/
+/*button*/
+
+%transition_style {
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+-webkit-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+transition: all 0.4s ease-in-out;
+}
+%fontlight{font-family: 'poppinslight' !important;}
+
+%fontmedium{font-family: 'poppinsmedium' !important;}
+%fontsemibold{font-family: 'poppinssemibold' !important;}
+%fontbold{font-family: 'poppinsbold' !important;}
+%fontregular{font-family: 'poppinsregular' !important;}
+%bluebutton{ background: $primarycolor; color:#fff;}
+%redbutton{ background: $redcolor; color:#fff;}
+%greenbutton{ background: $greencolor; color:#fff;}
+%orangebutton{ background: $orangecolor; color:#fff;}

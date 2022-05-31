@@ -1,0 +1,43 @@
+
+<header>
+  <div class="card-header justify-content-between border-0">
+    <div class="card-toolbar" >
+      <!-- <form [formGroup]="searchForm" *ngIf="isSearchBar">
+      <div class="mr-2">
+        <input
+          type="text"
+          class="form-control f_13 border-0 topsearch"
+          placeholder="Search" formControlName="searchText" (input)= "onSearch()"
+        />
+      </div>
+    </form> -->
+    </div>
+
+    <div class="card-toolbar userlogarea">
+      <div class="mr-0">
+        <!-- <select class="form-control f_13">
+          <option>Welcome John Doe</option>
+        </select> -->
+
+        <button
+          mat-button
+          [matMenuTriggerFor]="belowMenu"
+          class="noborder_right"
+        >
+          <span class="text-muted">Hi,</span> {{ userName }}
+          <span class="userlog_img">
+            <span class="roundtext text-capitalize">
+              {{ userName }}
+            </span>
+          </span>
+        </button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <div class="userlog_dropdown">
+            <button mat-menu-item [routerLink]="['/profile']">Profile</button>
+            <button mat-menu-item [routerLink]="['/sign-out']">Sign-Out</button>
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</header>

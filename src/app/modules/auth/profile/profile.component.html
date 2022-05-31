@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="breadcrumb_section">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+            <!-- <li class="breadcrumb-item"><a routerLink="/club/academy/mode">Mode</a></li> -->
+            <li class="breadcrumb-item active">Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="maincontent_area">
+
+  <div class="container h-100">
+    <div class="row justify-content-center d-flex  h-100">
+      <div class="col-lg-5 login_area">
+        <form class="maincontent_area" [formGroup]="profileAddForm" #profileAddNgForm="ngForm">
+          <span class="w-100 text-center d-inline-block loginlogo">
+
+        </span>
+          <h6 class="text-white w-100 text-center f_light f_19 mb-4">Discover the restaurant near by you</h6>
+
+      <div class="profilenew_right_details liveevntscontent_sec_new_ wow fadeInUp animated ">
+        <h4 class="w-100 text-center f_17 mb-4 f_semi">User Profile</h4>
+
+
+          <div
+            class="alert"
+            [ngClass]="alert.type"
+            role="alert"
+            *ngIf="showAlert"
+          >
+            {{ alert.message }}
+          </div>
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:400px">
+          <div class="form-group">
+
+            <label for="file">File</label>
+
+            <input
+
+                formControlName="file"
+
+                id="file"
+
+                type="file"
+
+                class="form-control"
+
+                (change)="onFileChange($event)">
+                <mat-error
+                *ngIf="
+                  isSubmited && profileAddForm.get('file')!.hasError('required')
+                "
+              >
+                profile pic is required
+              </mat-error>
+
+        </div>
+
+
+
+
+
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="text"
+              class="form-control text-center"
+              formControlName="username"
+              placeholder="User Name"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && profileAddForm.get('username')!.hasError('required')
+              "
+            >
+              User name is required
+            </mat-error>
+          </div>
+
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="text"
+              class="form-control text-center"
+              formControlName="email"
+              placeholder="Email"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && profileAddForm.get('email')!.hasError('required')
+              "
+            >
+              Email is required
+            </mat-error>
+          </div>
+
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="password"
+              class="form-control text-center"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && profileAddForm.get('password')!.hasError('required')
+              "
+            >
+              Password is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="password"
+              class="form-control text-center"
+              formControlName="confirmpassword"
+              placeholder=" confirmpassword"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && profileAddForm.get('confirmpassword')!.hasError('required')
+              "
+            >
+              Both password and confirm password should match
+            </mat-error>
+          </div>
+
+          <div class="col-lg-12 mt-2 pl-0 pr-0">
+            <button (click)="onSubmit()" class="bluebutton w-100 btn btnlg h-auto">Submit</button>
+          </div>
+
+
+
+      </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+    </div>
+
+

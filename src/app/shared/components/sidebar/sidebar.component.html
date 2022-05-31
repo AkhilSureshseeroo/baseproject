@@ -1,0 +1,50 @@
+
+<div class="left_sec_contents">
+
+  <span class="d-inline-block w-100 text-center">
+    <a [routerLink]="['/exception']" routerLinkActive="router-link-active">
+      <!-- <img src="../../../../assets/images/rezoy_logo.png" /> -->
+    </a>
+  </span>
+
+    <div class="scrollbar small-scroll">
+
+        <div class="force-overflow">
+  <div class="highmediumlow text-center">
+    <div class="menu_boxes all_">
+      <!-- <a [ngClass]="{'allActive':selectedPriority ==4}" [routerLink]="['/exception']">
+        <span class="all_round">{{ priorityCounts.heigh +priorityCounts.medium+priorityCounts.low}}</span>All
+      </a> -->
+    </div>
+    <div class="menu_boxes high_">
+      <!-- <a [ngClass]="{'highActive':selectedPriority ==1}" (click)="priorityFilter(1)">
+        <span class="high_round">{{ priorityCounts.heigh }}</span>High
+      </a> -->
+    </div>
+    <div class="menu_boxes medium_">
+      <!-- <a [ngClass]="{'mediumActive':selectedPriority ==2}" (click)="priorityFilter(2)">
+        <span class="medium_round">{{ priorityCounts.medium }}</span> Medium
+      </a> -->
+    </div>
+    <div class="menu_boxes low_">
+      <!-- <a [ngClass]="{'lowActive':selectedPriority ==3}" (click)="priorityFilter(3)">
+        <span class="low_round">{{ priorityCounts.low}}</span> Low
+      </a> -->
+    </div>
+  </div>
+  <div class="navigation_menus">
+    <ul>
+      <li><a [routerLink]="['/pagemanagement/page-new']">Create page</a></li>
+
+      <li><a [routerLink]="['/pagemanagement/']">Page List</a></li>
+      <li><a [routerLink]="['/exception/exceptioncronlist']">Exception Type</a></li>
+      <li><a [routerLink]="['user/rezoy-users/customer-list']">Customer</a></li>
+      <li><a [routerLink]="['user/rezoy-users/agent-list']">Agent</a></li>
+      <li><a [routerLink]="['user/rezoy-users/merchant-list']">Merchant</a></li>
+
+    </ul>
+  </div>
+             </div>
+   </div>
+
+</div>

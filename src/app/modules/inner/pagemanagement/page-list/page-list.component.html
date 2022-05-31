@@ -1,0 +1,38 @@
+<mat-card>
+  <div class="container">
+    <h1>Notes app</h1>
+
+    <a mat-raised-button color="accent"href="#" routerLink="/pagemanagement/page-new/" class="btn btn-success">Create New Page</a>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Title</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Description</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Image</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>CreatedBy</th>
+        <th width="220px">Action</th>
+      </tr>
+      <mat-divider [vertical]="true"></mat-divider>
+      <tr *ngFor="let page of pages;let i=index;">
+        <td>{{page.title}} </td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{page.description  }}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{page.Image}}<img [src]="page.image"></td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{page.createdby}}</td>
+
+        <td>
+
+
+          <a  mat-raised-button color="accent"href="#" [routerLink]="['/pagemanagement/', page._id, 'page-edit']" class="btn btn-primary">Edit</a>
+
+          <button mat-raised-button color="warn"type="button" (click)="deletepage(page._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>

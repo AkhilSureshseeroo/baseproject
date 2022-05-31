@@ -1,0 +1,83 @@
+<div class="login_section">
+
+  <div class="container h-100">
+    <div class="row justify-content-center d-flex  h-100">
+      <div class="col-lg-5 login_area">
+        <form class="login_area" [formGroup]="signUpForm" #signUpNgForm="ngForm">
+          <span class="w-100 text-center d-inline-block loginlogo">
+
+        </span>
+          <h6 class="text-white w-100 text-center f_light f_19 mb-4">Discover the restaurant near by you</h6>
+
+      <div class="login_fields whitebox ">
+        <h4 class="w-100 text-center f_17 mb-4 f_semi">User signUp</h4>
+
+          <div
+            class="alert"
+            [ngClass]="alert.type"
+            role="alert"
+            *ngIf="showAlert"
+          >
+            {{ alert.message }}
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="text"
+              class="form-control text-center"
+              formControlName="username"
+              placeholder="User Name"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && signUpForm.get('username')!.hasError('required')
+              "
+            >
+              User name is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="text"
+              class="form-control text-center"
+              formControlName="email"
+              placeholder="Email"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && signUpForm.get('email')!.hasError('required')
+              "
+            >
+              Email is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 pb-4 pl-0 pr-0">
+            <input
+              type="password"
+              class="form-control text-center"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <mat-error
+              *ngIf="
+                isSubmited && signUpForm.get('password')!.hasError('required')
+              "
+            >
+              Password is required
+            </mat-error>
+          </div>
+          <div class="col-lg-12 mt-2 pl-0 pr-0">
+            <button (click)="onSubmit()" class="bluebutton w-100 btn btnlg h-auto">signUp</button>
+          </div>
+
+
+
+      </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+    </div>
+

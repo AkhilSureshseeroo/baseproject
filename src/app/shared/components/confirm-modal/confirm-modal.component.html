@@ -1,0 +1,10 @@
+<div class="message-dialoge-wrapper bg-white">
+  <div class="message-icon"></div>
+  <div class="message-txt py-3">
+    {{view.question}}
+  </div>
+  <div class="btn-group">
+    <button mat-button class="sxp-primary-btn mr-2 cancel" (click)="onCancel()">{{view.cancelBtnText}}</button>
+    <button mat-button class="sxp-primary-btn" (click)="onConfirm()">{{view.confirmBtnText}}</button>
+  </div>
+</div>

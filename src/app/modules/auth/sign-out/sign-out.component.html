@@ -1,0 +1,37 @@
+<div class="signout_area">
+  <div class="signout_alert">
+
+
+              <!-- Logo -->
+              <div class="w-100 text-center mb-4">
+                  <img src="../../../../assets/images/logo-horizontal-dark.png" />
+              </div>
+
+              <!-- Title -->
+              <div class="font-weight-bold text-dark h5 mb-2">You have signed out!</div>
+              <div class="text-muted">
+                  <!-- Redirect countdown -->
+                  <ng-container *ngIf="countdown > 0">
+                      Redirecting in
+                      {{ countdown | i18nPlural: countdownMapping }}
+                  </ng-container>
+
+                  <!-- Redirect message -->
+                  <ng-container *ngIf="countdown === 0">
+                      You are now being redirected!
+                  </ng-container>
+              </div>
+
+              <!-- Form footer -->
+              <div class="mt-4 pt-4 border_top f_medium text-secondary text-center">
+                  <span>Go to</span>
+                  <a
+                      class="ml-1 f_semi"
+                      [routerLink]="['/sign-in']"
+                      >Sign in
+                  </a>
+              </div>
+
+
+  </div>
+  </div>
