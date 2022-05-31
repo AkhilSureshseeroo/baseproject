@@ -12,6 +12,7 @@ import { PagesService } from 'src/app/shared/services/pages.service';
 export class PageNewComponent implements OnInit {
   @ViewChild("pageAddNgForm")
   pageAddNgForm!: NgForm;
+  
 
 
   alert: { type: string; message: string } = {
@@ -26,13 +27,18 @@ export class PageNewComponent implements OnInit {
   description:any;
   email: string = "";
   pageDetails: any;
+  tinyMceSettings: any;
+
+
   token:any=(localStorage.getItem('accessToken'));
   constructor(
     private _formBuilder: FormBuilder,
     private _activatedRoute: ActivatedRoute,
     private _authservice:AuthService,
     private _pageservice: PagesService,
-    private _router: Router
+    private _router: Router,
+    
+
   ) {console.log(localStorage.getItem('userId')),
      console.log(localStorage.getItem('accessToken'))
 
@@ -48,10 +54,13 @@ export class PageNewComponent implements OnInit {
 
 
   });
+  
 
   }
 
   ngOnInit(): void {
+    
+    
     this.email = this._pageservice.email;
     this._authservice.getprofileDetails(this.pageAddForm.value._id,this.token).subscribe(
 

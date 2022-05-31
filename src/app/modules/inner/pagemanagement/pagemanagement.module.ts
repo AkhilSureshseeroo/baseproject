@@ -16,7 +16,8 @@ import { PageListComponent } from './page-list/page-list.component';
   imports: [
     CommonModule,
     PagemanagementRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class PagemanagementModule { }

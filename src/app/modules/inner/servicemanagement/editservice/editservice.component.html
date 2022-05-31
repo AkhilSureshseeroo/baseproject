@@ -5,7 +5,7 @@
   <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
   <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
-  <li class="breadcrumb-item"><a routerLink="/servicemanagement">pagemanagement</a></li>
+  <li class="breadcrumb-item"><a routerLink="/dashboard/pagemanagement">pagemanagement</a></li>
   <li class="breadcrumb-item active">Page-new</li>
   </ol>
   </nav>
@@ -19,14 +19,14 @@
   <div class="container h-100">
   <div class="row justify-content-center d-flex h-100">
   <div class="col-lg-10 ">
-  <form class="login_area" [formGroup]="serviceAddForm" #serviceAddNgForm="ngForm">
+  <form class="login_area" [formGroup]="serviceEditForm" #serviceEditNgForm="ngForm">
   <span class="w-100 text-center d-inline-block loginlogo">
 
   </span>
-  <h6 class="text-black w-100 text-center f_light f_19 mb-4">Add your pages here</h6>
+  <h6 class="text-black w-100 text-center f_light f_19 mb-4">Edit your pages here</h6>
 
   <div class="profilenew_right_details liveevntscontent_sec_new_ wow fadeInUp animated ">
-  <h4 class="w-100 text-left f_17 mb-4 f_semi">Add New Service </h4>
+  <h4 class="w-100 text-left f_17 mb-4 f_semi">Edit Page </h4>
 
   <div
   class="alert"
@@ -47,7 +47,7 @@
   />
   <mat-error
   *ngIf="
-  isSubmited && serviceAddForm.get('title')!.hasError('required')
+  isSubmited && serviceEditForm.get('title')!.hasError('required')
   "
   >
   Title is required
@@ -67,15 +67,15 @@
   </div> -->
 
   <label for="description">Description</label>
-  <div class="col-lg-12 pb-12 pl-0 pr-0">
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
 
-  <textarea
+  <editor row="11"cols="50"
   type="text"
   class="form-control"
   formControlName="description"
   placeholder="Description">
 
-  </textarea>
+  </editor>
   <!-- <mat-error
   *ngIf="
   isSubmited && pageAddForm.get('description')!.hasError('required')
@@ -84,10 +84,10 @@
   Description is required
   </mat-error> -->
   </div>
-  <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:400px">
-  <div class="form-group">
+  <img src="{{serviceDetails.Image}}" style="height: 100px; width:300px">
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
 
-  <label for="Image">Page Image</label>
+  <label for="Image">Service Image</label>
 
   <input
 
@@ -102,7 +102,7 @@
   (change)="onFileChange($event)">
   <mat-error
   *ngIf="
-  isSubmited && serviceAddForm.get('file')!.hasError('required')
+  isSubmited && serviceEditForm.get('file')!.hasError('required')
   "
   >
   Service image is required
@@ -114,13 +114,13 @@
   <label for="email">CreatedBy</label>
   <input
   type="email"
-  readonly class="form-control"
+  class="form-control"
   formControlName="email"
   placeholder=""
   />
   <mat-error
   *ngIf="
-  isSubmited && serviceAddForm.get('email')!.hasError('required')
+  isSubmited && serviceEditForm.get('email')!.hasError('required')
   "
   >
   Created By is required
@@ -136,7 +136,7 @@
   />
   <mat-error
   *ngIf="
-  isSubmited && serviceAddForm.get('sortorder')!.hasError('required')
+  isSubmited && serviceEditForm.get('sortorder')!.hasError('required')
   "
   >
   Sort order is required
@@ -152,16 +152,12 @@
   />
   <mat-error
   *ngIf="
-  isSubmited && serviceAddForm.get('status')!.hasError('required')
+  isSubmited && serviceEditForm.get('status')!.hasError('required')
   "
   >
   Status is required
   </mat-error>
   </div>
-
-
-
-
 
   <div class="col-lg-12 mt-2 pl-0 pr-0">
   <button (click)="onSubmit()" class="bluebutton w-10 btn btnlg h-auto">Submit</button>

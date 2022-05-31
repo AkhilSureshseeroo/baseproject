@@ -1,0 +1,48 @@
+<mat-card>
+  <div class="container">
+    <h1>Service list</h1>
+
+    <a mat-raised-button color="accent"href="#" routerLink="/servicemanagement/new-service/" class="btn btn-success">Create New Service</a>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Title</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Description</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Image</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>CreatedBy</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Sort order</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Status</th>
+        <th width="220px">Action</th>
+      </tr>
+      <mat-divider [vertical]="true"></mat-divider>
+      <tr *ngFor="let service of services;let i=index;">
+        <td>{{service.title}} </td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{service.description  }}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{service.Image}}<img [src]="service.image"></td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{service.createdby}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{service.sortorder}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{service.status}}</td>
+
+        <td>
+
+
+          <a  mat-raised-button color="accent"href="#" [routerLink]="['/servicemanagement/', service._id, 'edit-service']" class="btn btn-primary">Edit</a>
+
+          <button mat-raised-button color="warn"type="button" (click)="deletepage(service._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>
+
+

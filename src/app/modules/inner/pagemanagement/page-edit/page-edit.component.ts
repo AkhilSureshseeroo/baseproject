@@ -69,7 +69,7 @@ export class PageEditComponent implements OnInit {
         debugger
         this.pageEditForm.get('title')?.setValue(this.pageDetails.title);
         this.pageEditForm.get('description')?.setValue(this.pageDetails.description);
-        this.pageEditForm.get('file')?.setValue(this.pageDetails.Image);
+        // this.pageEditForm.get('file')?.setValue(this.pageDetails.Image);
         debugger
         this.pageEditForm.get('email')?.setValue(this.pageDetails.createdby);
 
@@ -123,7 +123,7 @@ export class PageEditComponent implements OnInit {
 
 
 
-        this.imageSrc = reader.result as string;
+        this.pageDetails.Image = reader.result as string;
 
 
 
