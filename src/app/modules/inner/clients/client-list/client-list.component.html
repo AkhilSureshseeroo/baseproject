@@ -1,0 +1,48 @@
+<mat-card>
+  <div class="container">
+    <h1> list</h1>Client
+
+    <a mat-raised-button color="accent"href="#" routerLink="/clients/new-client/" class="btn btn-success">Create New Client</a>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Title</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Description</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Image</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>CreatedBy</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Sort order</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Status</th>
+        <th width="220px">Action</th>
+      </tr>
+      <mat-divider [vertical]="true"></mat-divider>
+      <tr *ngFor="let client of clients;let i=index;">
+        <td>{{client.title}} </td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{client.description  }}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{client.Image}}<img [src]="client.image"></td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{client.createdby}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{client.sortorder}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{client.status}}</td>
+
+        <td>
+
+
+          <a  mat-raised-button color="accent"href="#" [routerLink]="['/clients/', client._id, 'edit-client']" class="btn btn-primary">Edit</a>
+
+          <button mat-raised-button color="warn"type="button" (click)="deleteclient(client._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>
+
+

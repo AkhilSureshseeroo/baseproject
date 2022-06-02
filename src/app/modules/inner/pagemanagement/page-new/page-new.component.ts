@@ -12,7 +12,7 @@ import { PagesService } from 'src/app/shared/services/pages.service';
 export class PageNewComponent implements OnInit {
   @ViewChild("pageAddNgForm")
   pageAddNgForm!: NgForm;
-  
+
 
 
   alert: { type: string; message: string } = {
@@ -37,7 +37,7 @@ export class PageNewComponent implements OnInit {
     private _authservice:AuthService,
     private _pageservice: PagesService,
     private _router: Router,
-    
+
 
   ) {console.log(localStorage.getItem('userId')),
      console.log(localStorage.getItem('accessToken'))
@@ -54,13 +54,13 @@ export class PageNewComponent implements OnInit {
 
 
   });
-  
+
 
   }
 
   ngOnInit(): void {
-    
-    
+
+
     this.email = this._pageservice.email;
     this._authservice.getprofileDetails(this.pageAddForm.value._id,this.token).subscribe(
 
@@ -170,7 +170,7 @@ export class PageNewComponent implements OnInit {
         debugger
         const redirectURL =
           this._activatedRoute.snapshot.queryParamMap.get("redirectURL") ||
-          "/dashboard";
+          "/pagemanagement";
 
         // // Navigate to the redirect url
         this._router.navigateByUrl(redirectURL);

@@ -16,7 +16,7 @@ export class ServicelistComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._servicesservice.getPages(this.token).subscribe((data:any)=>{
+    this._servicesservice.getServices(this.token).subscribe((data:any)=>{
       debugger
       this.services=data.data;
 
@@ -24,7 +24,7 @@ export class ServicelistComponent implements OnInit {
     })
   }
   deletepage(_id:any){
-    this._servicesservice.deletepage(_id,this.token).subscribe(res =>{
+    this._servicesservice.deleteservice(_id,this.token).subscribe(res =>{
       this.services=this.services.filter((item: { _id: any; }) => item._id ! ==_id);
       console.log("page deleted successfully")
     })

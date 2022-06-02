@@ -27,6 +27,28 @@ const routes: Routes = [
             (m) => m.ServicemanagementModule
           ),
       },
+      {
+        path: "careers",
+        loadChildren: () =>
+          import("./careers/careers.module").then(
+            (m) => m.CareersModule
+          ),
+      },
+      {
+        path: "clients",
+        loadChildren: () =>
+          import("./clients/clients.module").then(
+            (m) => m.ClientsModule
+          ),
+      },
+      {
+        path: "contactus",
+        loadChildren: () =>
+          import("./contactus/contactus.module").then(
+            (m) => m.ContactusModule
+          ),
+      },
+
 
 
 

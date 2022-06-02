@@ -5,7 +5,7 @@ export const PagemanagementAPI = {
     return `${environment.apiUrl}pages`;
   },
   getPages():string{
-      return `${environment.apiUrl}pages/getpages`;
+      return `${environment.apiUrl}pages`;
   },
   deletePage(_id:number):string{
     return `${environment.apiUrl}pages/${_id}`;

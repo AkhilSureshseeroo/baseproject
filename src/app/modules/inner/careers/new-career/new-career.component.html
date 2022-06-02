@@ -1,0 +1,181 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-12 col-sm-12">
+  <div class="breadcrumb_section">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+  <li class="breadcrumb-item"><a routerLink="/servicemanagement">careers</a></li>
+  <li class="breadcrumb-item active">New-career</li>
+  </ol>
+  </nav>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="body">
+
+  <div class="container h-100">
+  <div class="row justify-content-center d-flex h-100">
+  <div class="col-lg-10 ">
+  <form class="login_area" [formGroup]="careerAddForm" #careerAddNgForm="ngForm">
+  <span class="w-100 text-center d-inline-block loginlogo">
+
+  </span>
+  <h6 class="text-black w-100 text-center f_light f_19 mb-4">Add your Careers here</h6>
+
+  <div class="profilenew_right_details liveevntscontent_sec_new_ wow fadeInUp animated ">
+  <h4 class="w-100 text-left f_17 mb-4 f_semi">Add New Career </h4>
+
+  <div
+  class="alert"
+  [ngClass]="alert.type"
+  role="alert"
+  *ngIf="showAlert"
+  >
+  {{ alert.message }}
+  </div>
+
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
+  <label for="title">Title</label>
+  <input
+  type="text"
+  class="form-control"
+  formControlName="title"
+  placeholder="Title"
+  />
+  <mat-error
+  *ngIf="
+  isSubmited && careerAddForm.get('title')!.hasError('required')
+  "
+  >
+  Title is required
+  </mat-error>
+  </div>
+  <!-- <div class="form-group">
+  <label for="description">Description</label>
+  <textarea name="description" class="form-control"formControlName="description" placeholder="Description">
+  </textarea>
+  <mat-error
+  *ngIf="
+  isSubmited && pageAddForm.get('description')!.hasError('required')
+  "
+  >
+  Description is required
+  </mat-error>
+  </div> -->
+
+  <label for="description">Description</label>
+  <div class="col-lg-12 pb-12 pl-0 pr-0">
+
+  <textarea
+  type="text"
+  class="form-control"
+  formControlName="description"
+  placeholder="Description">
+
+  </textarea>
+  <!-- <mat-error
+  *ngIf="
+  isSubmited && pageAddForm.get('description')!.hasError('required')
+  "
+  >
+  Description is required
+  </mat-error> -->
+  </div>
+  <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:400px">
+  <div class="form-group">
+
+  <label for="Image">Career Image</label>
+
+  <input
+
+  formControlName="file"
+
+  id="file"
+
+  type="file"
+
+  class="form-control"
+
+  (change)="onFileChange($event)">
+  <mat-error
+  *ngIf="
+  isSubmited && careerAddForm.get('file')!.hasError('required')
+  "
+  >
+  Service image is required
+  </mat-error>
+
+  </div>
+
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
+  <label for="email">CreatedBy</label>
+  <input
+  type="email"
+  readonly class="form-control"
+  formControlName="email"
+  placeholder=""
+  />
+  <mat-error
+  *ngIf="
+  isSubmited && careerAddForm.get('email')!.hasError('required')
+  "
+  >
+  Created By is required
+  </mat-error>
+  </div>
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
+  <label for="sortorder">Sortorder</label>
+  <input
+  type="number"
+  class="form-control"
+  formControlName="sortorder"
+  placeholder=""
+  />
+  <mat-error
+  *ngIf="
+  isSubmited && careerAddForm.get('sortorder')!.hasError('required')
+  "
+  >
+  Sort order is required
+  </mat-error>
+  </div>
+  <div class="col-lg-12 pb-4 pl-0 pr-0">
+  <label for="status">Status</label>
+
+                    <select formControlName="status" class="form-control" >
+                        <option disabled>Select Status</option>
+
+                        <option *ngFor="let status of statuses">{{status}}</option>
+                    </select>
+  <mat-error
+  *ngIf="
+  isSubmited && careerAddForm.get('status')!.hasError('required')
+  "
+  >
+  Status is required
+  </mat-error>
+  </div>
+
+
+
+
+
+  <div class="col-lg-12 mt-2 pl-0 pr-0">
+  <button (click)="onSubmit()" class="bluebutton w-10 btn btnlg h-auto">Submit</button>
+  </div>
+
+
+  </div>
+
+  </form>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+
+

@@ -10,7 +10,7 @@ import { ServicesService } from 'src/app/shared/services/services.service';
   styleUrls: ['./editservice.component.scss']
 })
 export class EditserviceComponent implements OnInit {
-  @ViewChild("pageEditNgForm")
+  @ViewChild("serviceEditNgForm")
   serviceEditNgForm!: NgForm;
 
   alert: { type: string; message: string } = {
@@ -30,6 +30,8 @@ export class EditserviceComponent implements OnInit {
   serviceDetails: any;
   snapshot:any;
   token:any=(localStorage.getItem('accessToken'));
+  statuses:any=['true','false']
+
 
 
 
@@ -73,8 +75,8 @@ export class EditserviceComponent implements OnInit {
         // this.pageEditForm.get('file')?.setValue(this.pageDetails.Image);
         debugger
         this.serviceEditForm.get('email')?.setValue(this.serviceEditDetails.createdby);
-        this.serviceEditForm.get('email')?.setValue(this.serviceEditDetails.createdby);
-        this.serviceEditForm.get('email')?.setValue(this.serviceEditDetails.createdby);
+        this.serviceEditForm.get('sortorder')?.setValue(this.serviceEditDetails.sortorder);
+        this.serviceEditForm.get('status')?.setValue(this.serviceEditDetails.status);
 
         console.log(response)
         // Re-enable the form
@@ -175,7 +177,7 @@ export class EditserviceComponent implements OnInit {
         debugger
         const redirectURL =
           this._activatedRoute.snapshot.queryParamMap.get("redirectURL") ||
-          "/dashboard";
+          "/servicemanagement";
 
         // // Navigate to the redirect url
         this._router.navigateByUrl(redirectURL);

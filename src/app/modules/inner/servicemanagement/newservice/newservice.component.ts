@@ -10,7 +10,7 @@ import { ServicesService } from 'src/app/shared/services/services.service';
   styleUrls: ['./newservice.component.scss']
 })
 export class NewserviceComponent implements OnInit {
-  @ViewChild("pageAddNgForm")
+  @ViewChild("serviceAddNgForm")
   serviceAddNgForm!: NgForm;
 
 
@@ -27,6 +27,7 @@ export class NewserviceComponent implements OnInit {
   email: string = "";
   pageDetails: any;
   token:any=(localStorage.getItem('accessToken'));
+  statuses:any=['true','false']
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -63,20 +64,7 @@ export class NewserviceComponent implements OnInit {
         this.serviceAddForm.get('email')?.setValue(this.pageDetails.email);
 
         console.log(response)
-        // Re-enable the form
-        // this.profileAddForm.enable();
 
-        // Reset the form
-        // this.profileAddNgForm.resetForm();
-
-        // Set the alert
-        // this.alert = {
-        //   type: "alert-warning",
-        //   message: "Wrong format ",
-        // };
-
-        // Show the alert
-        // this.showAlert = true;
       }
     );
 
@@ -164,7 +152,7 @@ export class NewserviceComponent implements OnInit {
         debugger
         const redirectURL =
           this._activatedRoute.snapshot.queryParamMap.get("redirectURL") ||
-          "/dashboard";
+          "/servicemanagement";
 
         // // Navigate to the redirect url
         this._router.navigateByUrl(redirectURL);

@@ -37,15 +37,15 @@ set userId(id: string) {
 
     );
   }
-  getPages(session:any): Observable<Services[]> {
+  getServices(session:any): Observable<Services[]> {
     return this.communicationService.get<Services[]>(
-      ServicemanagementAPI.getPages(),'',session
+      ServicemanagementAPI.getServices(),'',session
     );
 
   }
-  deletepage(_id:any,session:any):Observable<Services>{
+  deleteservice(_id:any,session:any):Observable<Services>{
     return this.communicationService.delete<Services>(
-      ServicemanagementAPI.deletePage(_id),'',session
+      ServicemanagementAPI.deleteservice(_id),'',session
     )
   }
   getServiceDetails(_id: any,session:any): Observable<Services> {

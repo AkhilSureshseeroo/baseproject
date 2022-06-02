@@ -68,14 +68,15 @@
 
   <label for="description">Description</label>
   <div class="col-lg-12 pb-4 pl-0 pr-0">
-
-  <editor row="11"cols="50"
+    <textarea
   type="text"
   class="form-control"
   formControlName="description"
   placeholder="Description">
 
-  </editor>
+  </textarea>
+
+
   <!-- <mat-error
   *ngIf="
   isSubmited && pageAddForm.get('description')!.hasError('required')
@@ -84,7 +85,7 @@
   Description is required
   </mat-error> -->
   </div>
-  <img src="{{serviceDetails.Image}}" style="height: 100px; width:300px">
+  <img src="{{serviceEditDetails.Image}}" style="height: 100px; width:300px">
   <div class="col-lg-12 pb-4 pl-0 pr-0">
 
   <label for="Image">Service Image</label>
@@ -129,7 +130,7 @@
   <div class="col-lg-12 pb-4 pl-0 pr-0">
   <label for="sortorder">Sortorder</label>
   <input
-  type="text"
+  type="number"
   class="form-control"
   formControlName="sortorder"
   placeholder=""
@@ -144,12 +145,11 @@
   </div>
   <div class="col-lg-12 pb-4 pl-0 pr-0">
   <label for="status">Status</label>
-  <input
-  type="text"
-  class="form-control"
-  formControlName="status"
-  placeholder=""
-  />
+  <select formControlName="status" class="form-control" >
+    <option disabled>Select Status</option>
+
+    <option *ngFor="let status of statuses">{{status}}</option>
+</select>
   <mat-error
   *ngIf="
   isSubmited && serviceEditForm.get('status')!.hasError('required')

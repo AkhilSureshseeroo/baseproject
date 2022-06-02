@@ -1,0 +1,40 @@
+<mat-card>
+  <div class="container">
+    <h1> list</h1>Contact
+
+    <a mat-raised-button color="accent"href="#" routerLink="/contactus/new-contact/" class="btn btn-success">Create New Contact</a>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Email</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Phonenumber</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Address</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+
+        <th width="220px">Action</th>
+      </tr>
+      <mat-divider [vertical]="true"></mat-divider>
+      <tr *ngFor="let contact of contacts;let i=index;">
+        <td>{{contact.email}} </td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{contact.phonenumber  }}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{contact.address}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+
+
+        <td>
+
+
+          <a  mat-raised-button color="accent"href="#" [routerLink]="['/contactus/', contact._id, 'edit-contact']" class="btn btn-primary">Edit</a>
+
+          <button mat-raised-button color="warn"type="button" (click)="deletecontact(contact._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>
+
+

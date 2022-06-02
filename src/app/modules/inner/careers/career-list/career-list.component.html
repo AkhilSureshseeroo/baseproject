@@ -1,0 +1,48 @@
+<mat-card>
+  <div class="container">
+    <h1>Career list</h1>
+
+    <a mat-raised-button color="accent"href="#" routerLink="/careers/new-career/" class="btn btn-success">Create New Career</a>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Title</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Description</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Image</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>CreatedBy</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Sort order</th>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <th>Status</th>
+        <th width="220px">Action</th>
+      </tr>
+      <mat-divider [vertical]="true"></mat-divider>
+      <tr *ngFor="let career of careers;let i=index;">
+        <td>{{career.title}} </td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{career.description  }}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{career.Image}}<img [src]="career.image"></td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{career.createdby}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{career.sortorder}}</td>
+        <mat-divider>[horizontal]="true"</mat-divider>
+        <td>{{career.status}}</td>
+
+        <td>
+
+
+          <a  mat-raised-button color="accent"href="#" [routerLink]="['/careers/', career._id, 'edit-career']" class="btn btn-primary">Edit</a>
+
+          <button mat-raised-button color="warn"type="button" (click)="deletepage(career._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>
+
+

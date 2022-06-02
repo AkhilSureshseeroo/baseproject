@@ -4,18 +4,18 @@ export const ServicemanagementAPI = {
   createService(): string {
     return `${environment.apiUrl}service`;
   },
-  getPages():string{
-      return `${environment.apiUrl}service/getpage`;
+  getServices():string{
+      return `${environment.apiUrl}service`;
   },
-  deletePage(_id:number):string{
-    return `${environment.apiUrl}pages/${_id}`;
+  deleteservice(_id:number):string{
+    return `${environment.apiUrl}service/${_id}`;
   },
   getservicedetails(_id:number):string{
-    return `${environment.apiUrl}pages/id/${_id}`;
+    return `${environment.apiUrl}service/id/${_id}`;
 
   },
   editservice(_id:number):string{
-    return `${environment.apiUrl}pages/${_id}`;
+    return `${environment.apiUrl}service/${_id}`;
   }
 };
 
